@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>World Captial Quiz | Powered by Postgre, Node, Express & ejs</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="app">
+        <h2 class="title">
+          World Captial Quiz | Powered by Postgre, Node, Express & ejs
+        </h2>
+        <h3 class="totalscore">Total Score: <%= locals.score %></h3>
+        <div class="form">
+          <h2 class="form-title"><%= locals.newquestion_country %></h2>
+          <form class="myform" action="/submit" method="post">
+            <input
+              type="text"
+              name="useranswer"
+              id=""
+              class="el-text"
+              placeholder="Please enter the country capital"
+              autofocus
+              autocomplete="false"
+            />
+            <input
+              type="submit"
+              value="submit"
+              name="submit"
+              class="el-submit"
+            />
+          </form>
+          <div class="message"><%= locals.msg %></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
